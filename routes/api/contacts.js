@@ -1,20 +1,13 @@
 const express = require("express");
 
-
-const router = express.Router()
-
 const {
   listContacts,
   getContactById,
   removeContact,
   addContact,
   updateContact,
-
   updateStatusContact,
 } = require("../../contacts/contacts.functions");
-
-} = require("../../models/contacts");
-
 
 const { contactValidator } = require("./../../utils/validator");
 
@@ -48,7 +41,6 @@ router.post("/", async (req, res, next) => {
     res.status(400).json({ message: "missing required name field" });
   }
 });
-
 
 router.delete("/:id", async (req, res, next) => {
   const { id } = req.params;
@@ -103,5 +95,3 @@ router.patch("/:contactId/favorite", async (req, res, next) => {
 });
 
 module.exports = router;
-
-
