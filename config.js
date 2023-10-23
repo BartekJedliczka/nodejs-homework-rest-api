@@ -5,4 +5,6 @@ module.exports = {
   //   mongoConnectionString: process.env.MONGODB_URI,
   jwtSecret: process.env.JWT_SECRET,
   jwtLifeTime: process.env.JWT_LIFETIME,
+  gmailPassword: process.env.GMAIL_PASSWORD,
+  gmailUser: process.env.GMAIL_USER,
 };

@@ -6,6 +6,8 @@ const upload = require("../auth/avatar.middleware");
 
 const usersController = require("./users.controller");
 
+usersRouter.post("/verify", usersController.resendVerificationHandler);
+
 usersRouter.post(
   "/signup",
   userValidateMiddleware,
@@ -25,6 +27,8 @@ usersRouter.get("/secret", authMiddleware, (req, res) =>
 usersRouter.get("/logout", authMiddleware, usersController.logoutHandler);
 
 usersRouter.get("/current", authMiddleware, usersController.currentHandler);
+
+usersRouter.get("/verify/:verificationToken", usersController.verifyHandler);
 
 usersRouter.patch(
   "/avatars",
